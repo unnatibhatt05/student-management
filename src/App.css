@@ -1,38 +1,648 @@
-.App {
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+/* Dashboard Title */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Add Course Section */
+.add-course input {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Course List */
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-list li {
+  background: #ffffff;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.button {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button.add {
+  background-color: #28a745;
+}
+
+.button.add:hover {
+  background-color: #218838;
+}
+
+.button.edit {
+  background-color: #ffc107;
+}
+
+.button.edit:hover {
+  background-color: #e0a800;
+}
+
+.button.delete {
+  background-color: #dc3545;
+}
+
+.button.delete:hover {
+  background-color: #c82333;
+}
+
+/* Progress Tracker */
+.progress-list {
+  list-style: none;
+  padding: 0;
+}
+
+.progress-list li {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 20px;
+  margin: 10px 0;
+}
+
+.progress {
+  height: 20px;
+  background-color: #28a745;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Assignments */
+.upload-form input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* 🔵 Background & Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-box {
+  background: rgba(253, 231, 34, 0.9);
+  padding: 100px;  /* ✅ Increased padding */
+  width: 700px;   /* ✅ Made login box wider */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+}
+/* 🟠 Auth Box - Highlighted Border */
+.auth-box {
+  background: rgb(150, 234, 247);
+  padding: 100px;
+  width: 700px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  border: 3px solid #151e71; /* ✅ Permanent Highlight */
+  box-shadow: 0px 0px 15px rgba(70, 108, 165, 0.6); /* ✅ Glow Effect */
+}
+
+/* ✅ Extra Glow on Hover */
+.auth-box:hover {
+  box-shadow: 0px 0px 20px rgba(151, 139, 78, 0.8);
+}
+
+/* 🔵 Heading */
+.auth-box h2 {
+  font-size: 32px;  /* ✅ Bigger Text */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* 🔵 Input Fields */
+.auth-box input {
+  width: 100%;
+  padding: 15px; /* ✅ Bigger Inputs */
+  margin: 12px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px; /* ✅ Bigger Text */
+}
+
+/* 🔵 Button */
+.auth-box button {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;  /* ✅ Bigger Button */
+  font-weight: bold;
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-box button:hover {
+  background: #978b4e;
+}
+
+/* 🔵 Sign Up Link */
+.auth-box .auth-link {
+  color: #3f52fe;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-box .auth-link:hover {
+  text-decoration: underline;
+}
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+   /* Light Blue Background */
+}
+
+/* 🔷 Dashboard Container */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 🔷 Dashboard Box */
+.dashboard-box {
+  background: rgb(197, 230, 242);
+  padding: 50px;
+  width: 750px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  border: 3px solid #0056b3; /* Highlighted Border */
+}
+
+/* 🔷 Heading */
+.dashboard-box h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0056b3; /* Blue Theme */
+  margin-bottom: 20px;
+}
+
+/* 🔷 Add Course Input Fields */
+.add-course input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #99edfe;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* 🔷 Course List */
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-list li {
+  background: #feffff;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(127, 221, 247, 0.1);
+  border-left: 5px solid #00050b; /* Blue Highlight */
+}
+
+/* 🔷 Empty Message */
+.empty-message {
+  color: #888;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* 🔷 Buttons */
+.button {
+  padding: 10px 60px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(1, 9, 14);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button.add {
+  background-color: #f7af49;
+}
+
+.button.add:hover {
+  background-color: #0056b3;
+}
+
+.button.edit {
+  background-color: #3d07ff;
+}
+
+.button.edit:hover {
+  background-color: #e0a800;
+}
+
+.button.delete {
+  background-color: #fd0821;
+}
+
+.button.delete:hover {
+  background-color: #c82333;
+}
+
+/* 🔷 Save Button */
+.button.save {
+  background-color: #dd8b19;
+}
+
+.button.save:hover {
+  background-color: #d9d763;
+}
+/* ✅ General Container */
+.progress-container {
+  width: 70%;
+  height: 70px;
+  padding: 50px;
+  background: rgba(72, 210, 238, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ✅ Progress List */
+.progress-list {
+  list-style: none;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.progress-item {
+  margin: 20px 0;
+  padding: 15px;
+  background: #e3f2fd; /* Light Blue */
+  border-radius: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ✅ Slider for Progress */
+.progress-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 150px;
+  border-radius: 5px;
+  background: #d0d0d0;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.progress-slider:hover {
+  opacity: 1;
+}
+
+.progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: #1e88e5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.progress-slider::-moz-range-thumb {
+  width: 40px;
+  height: 400px;
+  background: #1e88e5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ✅ Progress Text */
+.progress-text {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  color: #63a2e9;
+  margin-top: 5px;
+}
+/* Centered box with a clean border */
+.progress-box {
+  background: rgb(62, 61, 117);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 40vw; /* ✅ Bigger size */
+  height: 50vh; /* ✅ More vertical space */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 2px solid #d0d23b; /* ✅ Added border around the box */
+}
+
+/* Content inside the box */
+.progress-content {
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto; /* ✅ Allows scrolling if needed */
+  padding: 10px;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  height: 20%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress {
+  background-color: #4caf50;
   color: white;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+/* List and buttons */
+.progress-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.progress-list li {
+  margin-bottom: 15px;
+}
+
+.button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+/* Header inside Progress Tracker */
+.progress-box h2 {
+  color: #fdfefe; /* ✅ Deep blue for professional look */
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.assignment-container {
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.assignment-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+  height: 100px;
+}
+
+.assignment-box h2 {
+  color: #0056b3; /* Deep blue header */
+}
+
+.upload-section {
+  margin: 20px 0;
+}
+
+.file-input {
+  padding: 10px;
+  border: 2px solid #0056b3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.assignment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.assignment-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.status {
+  color: #28a745; /* Green text for uploaded status */
+}/* Common Styles for Centered Box */
+.assignment-box {
+  background-color: rgb(240, 230, 214);
+  border-radius: 15px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 140%;
+  max-width: 500px;
+  
+  min-height: 200px;
+  background-color: #fffdf0;
+  border: 5px solid #1f91d4;
+  min-height: 200px; /* Initial medium size */
+  max-height: 500px; /* Expands up to this limit */
+  overflow-y: auto; /* Enables scrolling if content exceeds max height */
+  transition: all 0.3s ease-in-out; /* Smooth resizing */
+
+
+}
+
+.assignment-box h2 {
+  font-size: 200%;
+  color: #0056b3; /* Deep blue header */
+  margin-bottom: 20px;
+  margin-top: 5px;
+  text-align: center;
+
+}
+
+/* File Upload Section */
+.upload-section {
+  margin-bottom: 0px;
+}
+
+.file-input {
+  padding: 12px;
+  border-radius: 5px;
+  border: 2px solid #0056b3; /* Blue border for file input */
+  width: 100%;
+  max-width: 900px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 170%;
+  min-height: 50px;
+}
+
+.file-input:hover {
+  border-color: #004080; /* Slightly darker blue on hover */
+}
+
+/* Uploaded Files Section */
+.uploaded-files {
+  margin-top: 0px;
+  text-align: left;
+}
+
+.uploaded-files h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* List of Assignments */
+.assignment-list {
+  list-style-type: none;
+  padding: 0;
+  background-color: rgb(174, 204, 249);
+  border-radius: 10;
+  border-color: #004080;
+}
+
+.assignment-item {
+  font-size: 1rem;
+  color: #333;
+  
+}
+
+.status {
+  color: green;
+  font-weight: bold;
+  font-weight: bold;
+}
+
+.empty-message {
+  font-size: 1rem;
+  color: #0c0c0c;
+}
+
+/* Styling for active page background */
+body {
+  padding-top: 0.1px; /* Ensure content is visible below navbar */
+}
+
+/* Responsive for mobile devices */
+@media (max-width: 768px) {
+  .assignment-box {
+    width: 90%;
+    padding: 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .file-input {
+    width: 100%;
+  }
+}
+/* Footer Styling */
+.footer {
+  background-color: #f7b2cf; /* Light background color */
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on top */
+}
+
+.footer p {
+  color: #360357; /* Dark text color */
+  font-size: 2.5rem; /* Slightly bigger text */
+  margin: 0;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 1rem; /* Adjust font size on smaller screens */
   }
 }
